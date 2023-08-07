@@ -34,7 +34,7 @@
             @can('admin')
             <div class="d-flex justify-content-end">
                 <a href="{{route('games.edit',['game'=>$game->id])}}" class="btn btn-outline-primary" style="margin-right:10px ">編輯</a>
-                <form action="{{route('games.destroy',$game)}}" method="post">
+                <form action="{{route('games.destroy',$game)}}" method="post" onsubmit="return confirmDelete()">
                     @csrf
                     @method('delete')
                     <button type="submit" class="btn btn-outline-danger">刪除</button>
@@ -44,7 +44,7 @@
             @can('manager')
             <div class="d-flex justify-content-end">
                 <a href="{{route('games.edit',['game'=>$game->id])}}" class="btn btn-outline-primary" style="margin-right:10px ">編輯</a>
-                <form action="{{route('games.destroy',$game)}}" method="post">
+                <form action="{{route('games.destroy',$game)}}" method="post" onsubmit="return confirmDelete()">
                     @csrf
                     @method('delete')
                     <button type="submit" class="btn btn-outline-danger">刪除</button>
@@ -58,4 +58,9 @@
     </div>
     </div>
 </div>
+<script>
+    function confirmDelete() {
+        return confirm("確定要刪除這個遊戲嗎？");
+    }
+</script>
 @endsection

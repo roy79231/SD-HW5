@@ -68,7 +68,7 @@
 
         <!-- 添加留言表单 -->
         @if(auth()->check())
-        <form action="{{ route('comments.store', ['gameId' => $game->id]) }}" method="post">
+        <form action="{{ route('comments.store', ['gameId' => $game->id]) }}" method="post" onsubmit="return validateForm()">
             @csrf
             <div>
                 <textarea name="content" rows="3"></textarea>
@@ -84,4 +84,19 @@
         </form>
         @endif
     </div>
+    <script>
+        function validateForm() {
+            var likeType = document.querySelector('input[name="like_type"]:checked');
+            if (!likeType) {
+                alert("請選擇讚或倒讚選項！");
+                return false; // 阻止表單提交
+            }
+            var content = document.querySelector('textarea[name="content"]').value;
+            if (content.trim() === '') {
+                alert("請填寫留言內容");
+                return false;
+            }
+            return true; // 允許表單提交
+        }
+    </script>
 @endsection
