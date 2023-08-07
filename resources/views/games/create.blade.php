@@ -35,7 +35,7 @@
         <input type="text" value="{{old('price')}}" name="price" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" style="font-size: 20px"/>
     </div>
     <div class="actions">
-        <button type="submit" class="btn btn-primary btn-lg">新增文章</button>
+        <button type="submit" class="btn btn-primary btn-lg">新增遊戲</button>
     </div>
 </form>
 </div>

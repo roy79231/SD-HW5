@@ -78,6 +78,9 @@
                                     </form>
                                 </div>
                             </li>
+                            <li>
+                                <a class="navbar-brand" href="{{ route('shoplist') }}">購物車</a>
+                            </li>
                         @endguest
                     </ul>
                 </div>

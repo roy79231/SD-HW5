@@ -17,7 +17,16 @@
         </div>
         <hr>
         <img src="{{ asset('storage/' . $game->image) }}" class="img-fluid" alt="遊戲圖片">
-
+        @if(auth()->check())
+        @if(in_array($game->id, auth()->user()->owned_games))
+            <p class="btn btn-primary">開始遊玩</p>
+        @else
+            <form action="{{ route('games.addToCart', ['gameId' => $game->id]) }}" method="post">
+                @csrf
+                <button type="submit" class="btn btn-primary">新增遊戲到購物車</button>
+            </form>
+        @endif
+        @endif
         <p class="my-5 mx-4" style="font-size: 20px">
             {!! nl2br($game->content) !!}
         </p>

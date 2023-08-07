@@ -44,6 +44,8 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'shopping_cart' => 'array',
+        'owned_games'=>'array'
     ];
     public function games(){
         return $this->hasMany('App\Models\Game');
