@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->json('shopping_cart')->nullable();
-            $table->json('owned_games')->nullable();
+            $table->json('shopping_cart');
+            $table->json('owned_games');
         });
     }
 

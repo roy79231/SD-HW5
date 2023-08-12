@@ -117,6 +117,9 @@ class GameController extends Controller
         foreach ($game->comments as $comment) {
             $comment->delete();
         }
+        if ($game->image) {
+            Storage::delete('public/' . $game->image);
+        }
         $game->delete();
         return redirect()->route('root')->with('notice' . '遊戲已刪除');
     }
@@ -145,8 +148,11 @@ class GameController extends Controller
         // 根據遊戲 ID 取得遊戲資料
         $games = Game::whereIn('id', $gameIds)->get();
 
+        $totalAmount = $games->sum('price');
+
+
         // 將遊戲資料傳遞到 shoplist.blade.php 模板中
-        return view('games.shoplist', ['games' => $games]);
+        return view('games.shoplist', ['games' => $games, 'totalAmount' => $totalAmount]);
     }
     public function addToCart($id)
     {

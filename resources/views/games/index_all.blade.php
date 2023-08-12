@@ -28,8 +28,8 @@
                     <h2 class="font-bold text-lg" style="margin-bottom: 20px ">
                         <a href="{{route('games.show',$game)}}">{{$game->title}}</a>
                         <br>
-                        <p style="font-size: 15px">#{{$game->tag}}</p>
-
+                        <br>
+                        <p style="font-size: 20px">#{{$game->tag}}</p>
                     </h2>
                     <!-- 圖片 -->
                     <div class="justify-content-end">
@@ -38,10 +38,10 @@
                 </div>
                 <div class="d-flex justify-content-between">
                     <!-- 價格和發行 -->
-                    <p class="" style="font-size: 15px">
+                    <p class="" style="font-size: 20px">
                         價格:{{$game->price}}
                     </p>
-                    <p class="" style="font-size: 15px">{{$game->created_at}} 由 {{$game->user->name}} 發行</p>
+                    <p class="d-none d-md-block" style="font-size: 20px">{{$game->created_at}} 由 {{$game->user->name}} 發行</p>
                 </div>
             </div>
 

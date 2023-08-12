@@ -15,18 +15,18 @@ class RoleController extends Controller
     public function setAdmin(User $user)
     {
         $user->update(['role' => User::ROLE_ADMIN]);
-        return redirect()->back()->with('notice', '用户角色已更新为ROLE_ADMIN');
+        return redirect()->back()->with('notice', '用戶已更新為admin');
     }
     public function setManager(User $user)
     {
         $user->update(['role' => User::ROLE_MANAGER]);
-        return redirect()->back()->with('notice', '用户角色已更新为ROLE_MANAGER');
+        return redirect()->back()->with('notice', '用戶已更新為manager');
     }
 
     public function setUser(User $user)
     {
         $user->update(['role' => User::ROLE_USER]);
-        return redirect()->back()->with('notice', '用户角色已更新为ROLE_USER');
+        return redirect()->back()->with('notice', '用戶已更新為user');
     }
 
 }

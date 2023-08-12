@@ -79,6 +79,8 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'role' => $role_id,
+            'shopping_cart' => [], // 初始化空購物車陣列
+            'owned_games' => [],   // 初始化空擁有遊戲陣列    
         ]);
     }
 }

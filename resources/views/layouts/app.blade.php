@@ -37,7 +37,7 @@
                             <form action="{{ route('search') }}" method="GET" class="d-flex">
                                 @csrf
                                 <input type="text" name="query" class="form-control me-2" placeholder="搜尋..." aria-label="搜尋">
-                                <button class="btn btn-outline-success" type="submit">搜尋</button>
+                                <button class="btn btn-outline-success" type="submit"><i class="bi bi-search"></i></button>
                             </form>
                         </li>
                     </ul>
@@ -65,7 +65,7 @@
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     @can('admin')
-                                    <a class="nav-link" href="{{route('controll')}}">控制</a>
+                                    <a class="dropdown-item" href="{{route('controll')}}">控制</a>
                                     @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
@@ -79,7 +79,7 @@
                                 </div>
                             </li>
                             <li>
-                                <a class="navbar-brand" href="{{ route('shoplist') }}">購物車</a>
+                                <a class="nav-link" href="{{ route('shoplist') }}"><i class="bi bi-cart-plus"  style="font-size: 20px;"></i></a>
                             </li>
                         @endguest
                     </ul>
