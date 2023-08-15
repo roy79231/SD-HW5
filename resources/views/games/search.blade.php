@@ -7,7 +7,7 @@
     </div>
     <div class="list-group">
         @if($games->isEmpty())
-            沒找到
+            <p style="font-size: 100px">沒找到</p>
         @else
         @foreach($games as $game)
         <div class="qwer">
